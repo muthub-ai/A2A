@@ -1901,6 +1901,11 @@
                 "timestamp": {
                     "description": "ISO 8601 datetime string when the status was recorded.",
                     "type": "string"
+                },
+                "metadata": {
+                    "description": "Custom metadata for this status update.",
+                    "type": ["object", "null"],
+                    "additionalProperties": true
                 }
             },
             "required": [
