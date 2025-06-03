@@ -151,6 +151,11 @@ export interface TaskStatus {
    * @example "2023-10-27T10:00:00Z"
    * */
   timestamp?: string;
+  /**
+   * Optional metadata associated with the task.
+   * @default null
+   */
+  metadata?: Record<string, unknown> | null;
 }
 // --8<-- [end:TaskStatus]
 
