@@ -465,9 +465,8 @@
             "description": "Represents a structured data segment within a message part.",
             "properties": {
                 "data": {
-                    "additionalProperties": {},
-                    "description": "Structured data content",
-                    "type": "object"
+                    "$ref": "#/definitions/Record<string,unknown>",
+                    "description": "Structured data content"
                 },
                 "kind": {
                     "const": "data",
@@ -1011,9 +1010,7 @@
                     "type": "string"
                 },
                 "params": {
-                    "additionalProperties": {},
-                    "description": "A Structured value that holds the parameter values to be used during the invocation of the method.",
-                    "type": "object"
+                    "description": "A Structured value that holds the parameter values to be used during the invocation of the method."
                 }
             },
             "required": [
@@ -1385,6 +1382,9 @@
                 "code",
                 "message"
             ],
+            "type": "object"
+        },
+        "Record<string,unknown>": {
             "type": "object"
         },
         "SecurityScheme": {
@@ -1895,17 +1895,17 @@
                     "$ref": "#/definitions/Message",
                     "description": "Additional status updates for client"
                 },
+                "metadata": {
+                    "$ref": "#/definitions/Record<string,unknown>",
+                    "default": null,
+                    "description": "Optional metadata associated with the task."
+                },
                 "state": {
                     "$ref": "#/definitions/TaskState"
                 },
                 "timestamp": {
                     "description": "ISO 8601 datetime string when the status was recorded.",
                     "type": "string"
-                },
-                "metadata": {
-                    "description": "Custom metadata for this status update.",
-                    "type": ["object", "null"],
-                    "additionalProperties": true
                 }
             },
             "required": [
