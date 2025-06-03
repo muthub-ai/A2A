@@ -53,16 +53,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LOG_LEVEL: WARN
           SHELLCHECK_OPTS: -e SC1091 -e 2086
- feat/taskstatus-metadata-support
           FILTER_REGEX_INCLUDE: '^(docs/|types/).*'
-
           VALIDATE_ALL_CODEBASE: false
- feat/taskstatus-metadata-support
-          FILTER_REGEX_EXCLUDE: "^(\\.github/|\\.vscode/|CODE_OF_CONDUCT.md|CHANGELOG.md).*"
- main
-
-          FILTER_REGEX_EXCLUDE: "^(\\.github/|\\.vscode/).*|CODE_OF_CONDUCT.md|CHANGELOG.md"
- main
+          FILTER_REGEX_EXCLUDE: "^(\.github/|\.vscode/|CODE_OF_CONDUCT.md|CHANGELOG.md).*"
           VALIDATE_PYTHON_BLACK: false
           VALIDATE_PYTHON_FLAKE8: false
           VALIDATE_PYTHON_ISORT: false
