@@ -57,7 +57,11 @@ jobs:
           FILTER_REGEX_INCLUDE: '^(docs/|types/).*'
 
           VALIDATE_ALL_CODEBASE: false
+ feat/taskstatus-metadata-support
           FILTER_REGEX_EXCLUDE: "^(\\.github/|\\.vscode/|CODE_OF_CONDUCT.md|CHANGELOG.md).*"
+ main
+
+          FILTER_REGEX_EXCLUDE: "^(\\.github/|\\.vscode/).*|CODE_OF_CONDUCT.md|CHANGELOG.md"
  main
           VALIDATE_PYTHON_BLACK: false
           VALIDATE_PYTHON_FLAKE8: false
@@ -70,3 +74,9 @@ jobs:
           VALIDATE_TYPESCRIPT_STANDARD: false
           VALIDATE_NATURAL_LANGUAGE: false
           MARKDOWN_CONFIG_FILE: ".markdownlint.json"
+          VALIDATE_MARKDOWN_PRETTIER: false
+          TYPESCRIPT_ES_CONFIG_FILE: ".eslintrc.js"
+          VALIDATE_JAVASCRIPT_PRETTIER: false
+          VALIDATE_JSON_PRETTIER: false
+          VALIDATE_YAML_PRETTIER: false
+          VALIDATE_GIT_COMMITLINT: false

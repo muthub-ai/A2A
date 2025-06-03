@@ -730,7 +730,8 @@ export interface SendStreamingMessageRequest extends JSONRPCRequest {
 /**
  * JSON-RPC success response model for the 'message/stream' method.
  */
-export interface SendStreamingMessageSuccessResponse extends JSONRPCSuccessResponse {
+export interface SendStreamingMessageSuccessResponse
+  extends JSONRPCSuccessResponse {
   result: Message | Task | TaskStatusUpdateEvent | TaskArtifactUpdateEvent;
 }
 // --8<-- [end:SendStreamingMessageSuccessResponse]
