@@ -8,7 +8,11 @@
     }
   },
   "ruff.importStrategy": "fromEnvironment",
+ feat/taskstatus-metadata-support
   "markdownlint.config": {
     "MD007": { "indent": 4 }
   }
+
+  "markdownlint.configFile": ".github/linters/.markdownlint.json"
+ main
 }
