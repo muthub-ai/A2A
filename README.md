@@ -3,6 +3,7 @@
 ![A2A Banner](docs/assets/a2a-banner.png)
 
 ## Muthu Testing Agents
+
 <!-- TOC -->
 
 **An open protocol enabling communication and interoperability between opaque agentic applications.**
