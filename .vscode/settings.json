@@ -9,6 +9,6 @@
   },
   "ruff.importStrategy": "fromEnvironment",
   "markdownlint.config": {
-    "MD007": { "indent": 4 },
+    "MD007": { "indent": 4 }
   }
 }

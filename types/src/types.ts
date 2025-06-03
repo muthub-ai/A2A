@@ -136,7 +136,7 @@ export interface Task {
     [key: string]: unknown;
   };
   /** Event type */
-  kind: "task";
+  kind: 'task';
 }
 // --8<-- [end:Task]
 
@@ -167,7 +167,7 @@ export interface TaskStatusUpdateEvent {
   /** The context the task is associated with */
   contextId: string;
   /** Event type */
-  kind: "status-update";
+  kind: 'status-update';
   /** Current status of the task */
   status: TaskStatus;
   /** Indicates the end of the event stream */
@@ -187,7 +187,7 @@ export interface TaskArtifactUpdateEvent {
   /** The context the task is associated with */
   contextId: string;
   /** Event type */
-  kind: "artifact-update";
+  kind: 'artifact-update';
   /** Generated artifact */
   artifact: Artifact;
   /** Indicates if this artifact appends to a previous one */
@@ -250,17 +250,16 @@ export interface MessageSendParams {
 
 // --8<-- [start:TaskState]
 /** Represents the possible states of a Task. */
-
 export enum TaskState {
-  Submitted = "submitted",
-  Working = "working",
-  InputRequired = "input-required",
-  Completed = "completed",
-  Canceled = "canceled",
-  Failed = "failed",
-  Rejected = "rejected",
-  AuthRequired = "auth-required",
-  Unknown = "unknown",
+  Submitted = 'submitted',
+  Working = 'working',
+  InputRequired = 'input-required',
+  Completed = 'completed',
+  Canceled = 'canceled',
+  Failed = 'failed',
+  Rejected = 'rejected',
+  AuthRequired = 'auth-required',
+  Unknown = 'unknown',
 }
 // --8<-- [end:TaskState]
 
@@ -286,7 +285,7 @@ export interface Artifact {
 /** Represents a single message exchanged between user and agent. */
 export interface Message {
   /** Message sender's role */
-  role: "user" | "agent";
+  role: 'user' | 'agent';
   /** Message content */
   parts: Part[];
   /** Extension metadata. */
@@ -302,7 +301,7 @@ export interface Message {
   /** The context the message is associated with */
   contextId?: string;
   /** Event type */
-  kind: "message";
+  kind: 'message';
 }
 // --8<-- [end:Message]
 
@@ -320,7 +319,7 @@ export interface PartBase {
 /** Represents a text segment within parts.*/
 export interface TextPart extends PartBase {
   /** Part type - text for TextParts*/
-  kind: "text";
+  kind: 'text';
   /** Text content */
   text: string;
 }
@@ -358,7 +357,7 @@ export interface FileWithUri extends FileBase {
 /** Represents a File segment within parts.*/
 export interface FilePart extends PartBase {
   /** Part type - file for FileParts */
-  kind: "file";
+  kind: 'file';
   /** File content either as url or bytes */
   file: FileWithBytes | FileWithUri;
 }
@@ -368,7 +367,7 @@ export interface FilePart extends PartBase {
 /** Represents a structured data segment within a message part. */
 export interface DataPart extends PartBase {
   /** Part type - data for DataParts */
-  kind: "data";
+  kind: 'data';
   /** Structured data content
    */
   data: Record<string, unknown>;
@@ -436,9 +435,9 @@ export interface SecuritySchemeBase {
 // --8<-- [start:APIKeySecurityScheme]
 /** API Key security scheme. */
 export interface APIKeySecurityScheme extends SecuritySchemeBase {
-  type: "apiKey";
+  type: 'apiKey';
   /** The location of the API key. Valid values are "query", "header", or "cookie".  */
-  in: "query" | "header" | "cookie";
+  in: 'query' | 'header' | 'cookie';
   /** The name of the header, query or cookie parameter to be used. */
   name: string;
 }
@@ -447,7 +446,7 @@ export interface APIKeySecurityScheme extends SecuritySchemeBase {
 // --8<-- [start:HTTPAuthSecurityScheme]
 /** HTTP Authentication security scheme. */
 export interface HTTPAuthSecurityScheme extends SecuritySchemeBase {
-  type: "http";
+  type: 'http';
   /**
    * The name of the HTTP Authentication scheme to be used in the Authorization header as defined
    * in RFC7235. The values used SHOULD be registered in the IANA Authentication Scheme registry.
@@ -466,7 +465,7 @@ export interface HTTPAuthSecurityScheme extends SecuritySchemeBase {
 // --8<-- [start:OAuth2SecurityScheme]
 /** OAuth2.0 security scheme configuration. */
 export interface OAuth2SecurityScheme extends SecuritySchemeBase {
-  type: "oauth2";
+  type: 'oauth2';
   /** An object containing configuration information for the flow types supported. */
   flows: OAuthFlows;
 }
@@ -475,7 +474,7 @@ export interface OAuth2SecurityScheme extends SecuritySchemeBase {
 // --8<-- [start:OpenIdConnectSecurityScheme]
 /** OpenID Connect security scheme configuration. */
 export interface OpenIdConnectSecurityScheme extends SecuritySchemeBase {
-  type: "openIdConnect";
+  type: 'openIdConnect';
   /** Well-known URL to discover the [[OpenID-Connect-Discovery]] provider metadata. */
   openIdConnectUrl: string;
 }
@@ -592,7 +591,7 @@ export interface JSONRPCMessage {
   /**
    * Specifies the version of the JSON-RPC protocol. MUST be exactly "2.0".
    */
-  readonly jsonrpc: "2.0";
+  readonly jsonrpc: '2.0';
 
   /**
    * An identifier established by the Client that MUST contain a String, Number.
@@ -695,7 +694,7 @@ export type JSONRPCResponse =
  */
 export interface SendMessageRequest extends JSONRPCRequest {
   id: number | string;
-  method: "message/send";
+  method: 'message/send';
   params: MessageSendParams;
 }
 // --8<-- [end:SendMessageRequest]
@@ -713,9 +712,7 @@ export interface SendMessageSuccessResponse extends JSONRPCSuccessResponse {
 /**
  * JSON-RPC response model for the 'message/send' method.
  */
-export type SendMessageResponse =
-  | SendMessageSuccessResponse
-  | JSONRPCErrorResponse;
+export type SendMessageResponse = SendMessageSuccessResponse | JSONRPCErrorResponse;
 // --8<-- [end:SendMessageResponse]
 
 // --8<-- [start:SendStreamingMessageRequest]
@@ -724,7 +721,7 @@ export type SendMessageResponse =
  */
 export interface SendStreamingMessageRequest extends JSONRPCRequest {
   id: number | string;
-  method: "message/stream";
+  method: 'message/stream';
   params: MessageSendParams;
 }
 // --8<-- [end:SendStreamingMessageRequest]
@@ -733,8 +730,7 @@ export interface SendStreamingMessageRequest extends JSONRPCRequest {
 /**
  * JSON-RPC success response model for the 'message/stream' method.
  */
-export interface SendStreamingMessageSuccessResponse
-  extends JSONRPCSuccessResponse {
+export interface SendStreamingMessageSuccessResponse extends JSONRPCSuccessResponse {
   result: Message | Task | TaskStatusUpdateEvent | TaskArtifactUpdateEvent;
 }
 // --8<-- [end:SendStreamingMessageSuccessResponse]
@@ -755,7 +751,7 @@ export type SendStreamingMessageResponse =
 export interface GetTaskRequest extends JSONRPCRequest {
   id: number | string;
   /** A String containing the name of the method to be invoked. */
-  method: "tasks/get";
+  method: 'tasks/get';
   /** A Structured value that holds the parameter values to be used during the invocation of the method. */
   params: TaskQueryParams;
 }
@@ -785,7 +781,7 @@ export type GetTaskResponse = GetTaskSuccessResponse | JSONRPCErrorResponse;
 export interface CancelTaskRequest extends JSONRPCRequest {
   id: number | string;
   /** A String containing the name of the method to be invoked. */
-  method: "tasks/cancel";
+  method: 'tasks/cancel';
   /** A Structured value that holds the parameter values to be used during the invocation of the method. */
   params: TaskIdParams;
 }
@@ -805,9 +801,7 @@ export interface CancelTaskSuccessResponse extends JSONRPCSuccessResponse {
 /**
  * JSON-RPC response for the 'tasks/cancel' method.
  */
-export type CancelTaskResponse =
-  | CancelTaskSuccessResponse
-  | JSONRPCErrorResponse;
+export type CancelTaskResponse = CancelTaskSuccessResponse | JSONRPCErrorResponse;
 // --8<-- [end:CancelTaskResponse]
 
 // --8<-- [start:SetTaskPushNotificationConfigRequest]
@@ -817,7 +811,7 @@ export type CancelTaskResponse =
 export interface SetTaskPushNotificationConfigRequest extends JSONRPCRequest {
   id: number | string;
   /** A String containing the name of the method to be invoked. */
-  method: "tasks/pushNotificationConfig/set";
+  method: 'tasks/pushNotificationConfig/set';
   /** A Structured value that holds the parameter values to be used during the invocation of the method. */
   params: TaskPushNotificationConfig;
 }
@@ -827,8 +821,7 @@ export interface SetTaskPushNotificationConfigRequest extends JSONRPCRequest {
 /**
  * JSON-RPC success response model for the 'tasks/pushNotificationConfig/set' method.
  */
-export interface SetTaskPushNotificationConfigSuccessResponse
-  extends JSONRPCSuccessResponse {
+export interface SetTaskPushNotificationConfigSuccessResponse extends JSONRPCSuccessResponse {
   /** The result object on success. */
   result: TaskPushNotificationConfig;
 }
@@ -850,7 +843,7 @@ export type SetTaskPushNotificationConfigResponse =
 export interface GetTaskPushNotificationConfigRequest extends JSONRPCRequest {
   id: number | string;
   /** A String containing the name of the method to be invoked. */
-  method: "tasks/pushNotificationConfig/get";
+  method: 'tasks/pushNotificationConfig/get';
   /** A Structured value that holds the parameter values to be used during the invocation of the method. */
   params: TaskIdParams;
 }
@@ -860,8 +853,7 @@ export interface GetTaskPushNotificationConfigRequest extends JSONRPCRequest {
 /**
  * JSON-RPC success response model for the 'tasks/pushNotificationConfig/get' method.
  */
-export interface GetTaskPushNotificationConfigSuccessResponse
-  extends JSONRPCSuccessResponse {
+export interface GetTaskPushNotificationConfigSuccessResponse extends JSONRPCSuccessResponse {
   /** The result object on success. */
   result: TaskPushNotificationConfig;
 }
@@ -883,7 +875,7 @@ export type GetTaskPushNotificationConfigResponse =
 export interface TaskResubscriptionRequest extends JSONRPCRequest {
   id: number | string;
   /** A String containing the name of the method to be invoked. */
-  method: "tasks/resubscribe";
+  method: 'tasks/resubscribe';
   /** A Structured value that holds the parameter values to be used during the invocation of the method. */
   params: TaskIdParams;
 }
