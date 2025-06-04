@@ -46,6 +46,7 @@ jobs:
           experimental_apply_changes_via_bot: 1
           dictionary_source_prefixes: '{"cspell": "https://raw.githubusercontent.com/streetsidesoftware/cspell-dicts/main/dictionaries/"}'
           extra_dictionaries: |
+  cspell:custom/custom-words.txt
             cspell:aws/dict/aws.txt
             cspell:bash/samples/bash-words.txt
             cspell:companies/dict/companies.txt
@@ -81,5 +82,6 @@ jobs:
             cspell:terraform/dict/terraform.txt
             cspell:typescript/dict/typescript.txt
           check_extra_dictionaries: ''
+  cspell:custom/custom-words.txt
           only_check_changed_files: true
           longest_word: '10'
