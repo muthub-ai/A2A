@@ -16,10 +16,11 @@ Let's break this down:
 
 1. **`DefaultRequestHandler`**:
 
- feat/taskstatus-metadata-support
-   - The SDK provides `DefaultRequestHandler`. This handler takes your `AgentExecutor` implementation (here, `HelloWorldAgentExecutor`) and a `TaskStore` (here, `InMemoryTaskStore`).
-   - It routes incoming A2A RPC calls to the appropriate methods on your executor (like `execute` or `cancel`).
-   - The `TaskStore` is used by the `DefaultRequestHandler` to manage the lifecycle of tasks, especially for stateful interactions, streaming, and resubscription. Even if your agent executor is simple, the handler needs a task store.
+feat/taskstatus-metadata-support
+
+- The SDK provides `DefaultRequestHandler`. This handler takes your `AgentExecutor` implementation (here, `HelloWorldAgentExecutor`) and a `TaskStore` (here, `InMemoryTaskStore`).
+- It routes incoming A2A RPC calls to the appropriate methods on your executor (like `execute` or `cancel`).
+- The `TaskStore` is used by the `DefaultRequestHandler` to manage the lifecycle of tasks, especially for stateful interactions, streaming, and resubscription. Even if your agent executor is simple, the handler needs a task store.
 
 2. **`A2AStarletteApplication`**:
 
@@ -27,18 +28,18 @@ Let's break this down:
    - The `agent_card` is crucial because the server will expose it at the `/.well-known/agent.json` endpoint (by default).
    - The `request_handler` is responsible for processing all incoming A2A method calls by interacting with your `AgentExecutor`.
 
-    - The SDK provides `DefaultRequestHandler`. This handler takes your `AgentExecutor` implementation (here, `HelloWorldAgentExecutor`) and a `TaskStore` (here, `InMemoryTaskStore`).
-    - It routes incoming A2A RPC calls to the appropriate methods on your executor (like `execute` or `cancel`).
-    - The `TaskStore` is used by the `DefaultRequestHandler` to manage the lifecycle of tasks, especially for stateful interactions, streaming, and resubscription. Even if your agent executor is simple, the handler needs a task store.
+   - The SDK provides `DefaultRequestHandler`. This handler takes your `AgentExecutor` implementation (here, `HelloWorldAgentExecutor`) and a `TaskStore` (here, `InMemoryTaskStore`).
+   - It routes incoming A2A RPC calls to the appropriate methods on your executor (like `execute` or `cancel`).
+   - The `TaskStore` is used by the `DefaultRequestHandler` to manage the lifecycle of tasks, especially for stateful interactions, streaming, and resubscription. Even if your agent executor is simple, the handler needs a task store.
 
-2. **`A2AStarletteApplication`**:
+3. **`A2AStarletteApplication`**:
 
-    - The `A2AStarletteApplication` class is instantiated with the `agent_card` and the `request_handler` (referred to as `http_handler` in its constructor).
-    - The `agent_card` is crucial because the server will expose it at the `/.well-known/agent.json` endpoint (by default).
-    - The `request_handler` is responsible for processing all incoming A2A method calls by interacting with your `AgentExecutor`.
- main
+   - The `A2AStarletteApplication` class is instantiated with the `agent_card` and the `request_handler` (referred to as `http_handler` in its constructor).
+   - The `agent_card` is crucial because the server will expose it at the `/.well-known/agent.json` endpoint (by default).
+   - The `request_handler` is responsible for processing all incoming A2A method calls by interacting with your `AgentExecutor`.
+     main
 
-3. **`uvicorn.run(server_app_builder.build(), ...)`**:
+4. **`uvicorn.run(server_app_builder.build(), ...)`**:
    - The `A2AStarletteApplication` has a `build()` method that constructs the actual Starlette application.
    - This application is then run using `uvicorn.run()`, making your agent accessible over HTTP.
    - `host='0.0.0.0'` makes the server accessible on all network interfaces on your machine.

@@ -21,21 +21,23 @@ A2A delegates authentication to standard web mechanisms, primarily relying on HT
 - **Out-of-Band Credential Acquisition:** The A2A Client is responsible for obtaining the necessary credential materials (e.g., OAuth 2.0 tokens, API keys, JWTs) through processes external to the A2A protocol itself. This could involve OAuth flows (authorization code, client credentials), secure key distribution, etc.
 - **HTTP Header Transmission:** Credentials **MUST** be transmitted in standard HTTP headers as per the requirements of the chosen authentication scheme (e.g., `Authorization: Bearer <token>`, `X-API-Key: <key_value>`).
 - **Server-Side Validation:** The A2A Server **MUST** authenticate **every** incoming request based on the credentials provided in the HTTP headers and its declared requirements.
- feat/taskstatus-metadata-support
+  feat/taskstatus-metadata-support
   - If authentication fails or is missing, the server **SHOULD** respond with standard HTTP status codes such as `401 Unauthorized` or `403 Forbidden`.
   - A `401 Unauthorized` response **SHOULD** include a `WWW-Authenticate` header indicating the required scheme(s), guiding the client on how to authenticate correctly.
 - **In-Task Authentication (Secondary Credentials):** If an agent, during a task, requires additional credentials for a _different_ system (e.g., to access a specific tool on behalf of the user), A2A recommends:
+
   1. The A2A Server transitions the A2A task to the `input-required` state.
   2. The `TaskStatus.message` (often using a `DataPart`) should provide details about the required authentication for the secondary system, potentially using an `AuthenticationInfo`-like structure.
   3. The A2A Client then obtains these new credentials out-of-band for the secondary system. These credentials might be provided back to the A2A Server (if it's proxying the request) or used by the client to interact directly with the secondary system.
 
-    - If authentication fails or is missing, the server **SHOULD** respond with standard HTTP status codes such as `401 Unauthorized` or `403 Forbidden`.
-    - A `401 Unauthorized` response **SHOULD** include a `WWW-Authenticate` header indicating the required scheme(s), guiding the client on how to authenticate correctly.
+  - If authentication fails or is missing, the server **SHOULD** respond with standard HTTP status codes such as `401 Unauthorized` or `403 Forbidden`.
+  - A `401 Unauthorized` response **SHOULD** include a `WWW-Authenticate` header indicating the required scheme(s), guiding the client on how to authenticate correctly.
+
 - **In-Task Authentication (Secondary Credentials):** If an agent, during a task, requires additional credentials for a _different_ system (e.g., to access a specific tool on behalf of the user), A2A recommends:
-    1. The A2A Server transitions the A2A task to the `input-required` state.
-    2. The `TaskStatus.message` (often using a `DataPart`) should provide details about the required authentication for the secondary system, potentially using an `AuthenticationInfo`-like structure.
-    3. The A2A Client then obtains these new credentials out-of-band for the secondary system. These credentials might be provided back to the A2A Server (if it's proxying the request) or used by the client to interact directly with the secondary system.
- main
+  1. The A2A Server transitions the A2A task to the `input-required` state.
+  2. The `TaskStatus.message` (often using a `DataPart`) should provide details about the required authentication for the secondary system, potentially using an `AuthenticationInfo`-like structure.
+  3. The A2A Client then obtains these new credentials out-of-band for the secondary system. These credentials might be provided back to the A2A Server (if it's proxying the request) or used by the client to interact directly with the secondary system.
+     main
 
 ## 3. Authorization
 

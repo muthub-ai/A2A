@@ -7,7 +7,7 @@ pip install a2a-sdk
 ```
 
 ::: a2a
- feat/taskstatus-metadata-support
+feat/taskstatus-metadata-support
 options:
 show_root_heading: false
 show_source: false
@@ -27,4 +27,5 @@ inherited_members: true
     font-family: 'Roboto Mono', monospace
   }
 </style>
- main
+
+main

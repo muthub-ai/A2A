@@ -1,18 +1,16 @@
 {
   "editor.formatOnSave": true,
   "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit"
     }
   },
   "ruff.importStrategy": "fromEnvironment",
- feat/taskstatus-metadata-support
   "markdownlint.config": {
-    "MD007": { "indent": 4 }
-  }
-
+    "MD007": {
+      "indent": 4
+    }
+  },
   "markdownlint.configFile": ".github/linters/.markdownlint.json"
- main
 }
