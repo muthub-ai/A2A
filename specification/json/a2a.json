@@ -323,7 +323,7 @@
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "integer"]
+          "type": ["string", "number"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -359,7 +359,7 @@
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "integer", "null"]
+          "type": ["string", "number", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -402,7 +402,7 @@
         "code": {
           "const": -32005,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "integer"
+          "type": "number"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -522,7 +522,7 @@
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "integer"]
+          "type": ["string", "number"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -558,7 +558,7 @@
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "integer", "null"]
+          "type": ["string", "number", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -578,7 +578,7 @@
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "integer"]
+          "type": ["string", "number"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -614,7 +614,7 @@
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "integer", "null"]
+          "type": ["string", "number", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -680,7 +680,7 @@
         "code": {
           "const": -32603,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "integer"
+          "type": "number"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -700,7 +700,7 @@
         "code": {
           "const": -32006,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "integer"
+          "type": "number"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -720,7 +720,7 @@
         "code": {
           "const": -32602,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "integer"
+          "type": "number"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -740,7 +740,7 @@
         "code": {
           "const": -32600,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "integer"
+          "type": "number"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -760,7 +760,7 @@
         "code": {
           "const": -32700,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "integer"
+          "type": "number"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -779,7 +779,7 @@
       "properties": {
         "code": {
           "description": "A Number that indicates the error type that occurred.",
-          "type": "integer"
+          "type": "number"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -837,7 +837,7 @@
         },
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "integer", "null"]
+          "type": ["string", "number", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -853,7 +853,7 @@
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "integer", "null"]
+          "type": ["string", "number", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -869,7 +869,7 @@
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "integer", "null"]
+          "type": ["string", "number", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -918,7 +918,7 @@
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "integer", "null"]
+          "type": ["string", "number", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -996,7 +996,7 @@
         },
         "historyLength": {
           "description": "Number of recent messages to be retrieved.",
-          "type": "integer"
+          "type": "number"
         },
         "pushNotificationConfig": {
           "$ref": "#/definitions/PushNotificationConfig",
@@ -1032,7 +1032,7 @@
         "code": {
           "const": -32601,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "integer"
+          "type": "number"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -1199,7 +1199,7 @@
         "code": {
           "const": -32003,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "integer"
+          "type": "number"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -1248,7 +1248,7 @@
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "integer"]
+          "type": ["string", "number"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -1284,7 +1284,7 @@
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "integer", "null"]
+          "type": ["string", "number", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -1311,7 +1311,7 @@
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "integer"]
+          "type": ["string", "number"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -1347,7 +1347,7 @@
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "integer", "null"]
+          "type": ["string", "number", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -1380,7 +1380,7 @@
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "integer"]
+          "type": ["string", "number"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -1416,7 +1416,7 @@
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "integer", "null"]
+          "type": ["string", "number", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -1530,7 +1530,7 @@
         "code": {
           "const": -32002,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "integer"
+          "type": "number"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -1550,7 +1550,7 @@
         "code": {
           "const": -32001,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "integer"
+          "type": "number"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -1584,7 +1584,7 @@
       "properties": {
         "historyLength": {
           "description": "Number of recent messages to be retrieved.",
-          "type": "integer"
+          "type": "number"
         },
         "id": {
           "description": "Task id.",
@@ -1603,7 +1603,7 @@
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "integer"]
+          "type": ["string", "number"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -1721,7 +1721,7 @@
         "code": {
           "const": -32004,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "integer"
+          "type": "number"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
