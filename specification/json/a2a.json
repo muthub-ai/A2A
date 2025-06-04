@@ -65,7 +65,6 @@
       "description": "A2A supported request types"
     },
     "APIKeySecurityScheme": {
-      "additionalProperties": false,
       "description": "API Key security scheme.",
       "properties": {
         "description": {
@@ -90,7 +89,6 @@
       "type": "object"
     },
     "AgentCapabilities": {
-      "additionalProperties": false,
       "description": "Defines optional capabilities supported by an agent.",
       "properties": {
         "pushNotifications": {
@@ -109,7 +107,6 @@
       "type": "object"
     },
     "AgentCard": {
-      "additionalProperties": false,
       "description": "An AgentCard conveys key information:\n- Overall details (version, name, description, uses)\n- Skills: A set of capabilities the agent can perform\n- Default modalities/content types supported by the agent.\n- Authentication requirements",
       "properties": {
         "capabilities": {
@@ -203,7 +200,6 @@
       "type": "object"
     },
     "AgentProvider": {
-      "additionalProperties": false,
       "description": "Represents the service provider of an agent.",
       "properties": {
         "organization": {
@@ -219,7 +215,6 @@
       "type": "object"
     },
     "AgentSkill": {
-      "additionalProperties": false,
       "description": "Represents a unit of capability that an agent can perform.",
       "properties": {
         "description": {
@@ -267,7 +262,6 @@
       "type": "object"
     },
     "Artifact": {
-      "additionalProperties": false,
       "description": "Represents an artifact generated for a task.",
       "properties": {
         "artifactId": {
@@ -299,7 +293,6 @@
       "type": "object"
     },
     "AuthorizationCodeOAuthFlow": {
-      "additionalProperties": false,
       "description": "Configuration details for a supported OAuth Flow",
       "properties": {
         "authorizationUrl": {
@@ -326,12 +319,11 @@
       "type": "object"
     },
     "CancelTaskRequest": {
-      "additionalProperties": false,
       "description": "JSON-RPC request model for the 'tasks/cancel' method.",
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "number"]
+          "type": ["string", "integer"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -363,12 +355,11 @@
       "description": "JSON-RPC response for the 'tasks/cancel' method."
     },
     "CancelTaskSuccessResponse": {
-      "additionalProperties": false,
       "description": "JSON-RPC success response model for the 'tasks/cancel' method.",
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "number", "null"]
+          "type": ["string", "integer", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -384,7 +375,6 @@
       "type": "object"
     },
     "ClientCredentialsOAuthFlow": {
-      "additionalProperties": false,
       "description": "Configuration details for a supported OAuth Flow",
       "properties": {
         "refreshUrl": {
@@ -407,13 +397,12 @@
       "type": "object"
     },
     "ContentTypeNotSupportedError": {
-      "additionalProperties": false,
       "description": "A2A specific error indicating incompatible content types between request and agent capabilities.",
       "properties": {
         "code": {
           "const": -32005,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "number"
+          "type": "integer"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -428,7 +417,6 @@
       "type": "object"
     },
     "DataPart": {
-      "additionalProperties": false,
       "description": "Represents a structured data segment within a message part.",
       "properties": {
         "data": {
@@ -450,7 +438,6 @@
       "type": "object"
     },
     "FileBase": {
-      "additionalProperties": false,
       "description": "Represents the base entity for FileParts",
       "properties": {
         "mimeType": {
@@ -465,7 +452,6 @@
       "type": "object"
     },
     "FilePart": {
-      "additionalProperties": false,
       "description": "Represents a File segment within parts.",
       "properties": {
         "file": {
@@ -494,7 +480,6 @@
       "type": "object"
     },
     "FileWithBytes": {
-      "additionalProperties": false,
       "description": "Define the variant where 'bytes' is present and 'uri' is absent",
       "properties": {
         "bytes": {
@@ -514,7 +499,6 @@
       "type": "object"
     },
     "FileWithUri": {
-      "additionalProperties": false,
       "description": "Define the variant where 'uri' is present and 'bytes' is absent",
       "properties": {
         "mimeType": {
@@ -534,12 +518,11 @@
       "type": "object"
     },
     "GetTaskPushNotificationConfigRequest": {
-      "additionalProperties": false,
       "description": "JSON-RPC request model for the 'tasks/pushNotificationConfig/get' method.",
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "number"]
+          "type": ["string", "integer"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -571,12 +554,11 @@
       "description": "JSON-RPC response for the 'tasks/pushNotificationConfig/set' method."
     },
     "GetTaskPushNotificationConfigSuccessResponse": {
-      "additionalProperties": false,
       "description": "JSON-RPC success response model for the 'tasks/pushNotificationConfig/get' method.",
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "number", "null"]
+          "type": ["string", "integer", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -592,12 +574,11 @@
       "type": "object"
     },
     "GetTaskRequest": {
-      "additionalProperties": false,
       "description": "JSON-RPC request model for the 'tasks/get' method.",
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "number"]
+          "type": ["string", "integer"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -629,12 +610,11 @@
       "description": "JSON-RPC response for the 'tasks/get' method."
     },
     "GetTaskSuccessResponse": {
-      "additionalProperties": false,
       "description": "JSON-RPC success response for the 'tasks/get' method.",
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "number", "null"]
+          "type": ["string", "integer", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -650,7 +630,6 @@
       "type": "object"
     },
     "HTTPAuthSecurityScheme": {
-      "additionalProperties": false,
       "description": "HTTP Authentication security scheme.",
       "properties": {
         "bearerFormat": {
@@ -674,7 +653,6 @@
       "type": "object"
     },
     "ImplicitOAuthFlow": {
-      "additionalProperties": false,
       "description": "Configuration details for a supported OAuth Flow",
       "properties": {
         "authorizationUrl": {
@@ -697,13 +675,12 @@
       "type": "object"
     },
     "InternalError": {
-      "additionalProperties": false,
       "description": "JSON-RPC error indicating an internal JSON-RPC error on the server.",
       "properties": {
         "code": {
           "const": -32603,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "number"
+          "type": "integer"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -718,13 +695,12 @@
       "type": "object"
     },
     "InvalidAgentResponseError": {
-      "additionalProperties": false,
       "description": "A2A specific error indicating agent returned invalid response for the current method",
       "properties": {
         "code": {
           "const": -32006,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "number"
+          "type": "integer"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -739,13 +715,12 @@
       "type": "object"
     },
     "InvalidParamsError": {
-      "additionalProperties": false,
       "description": "JSON-RPC error indicating invalid method parameter(s).",
       "properties": {
         "code": {
           "const": -32602,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "number"
+          "type": "integer"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -760,13 +735,12 @@
       "type": "object"
     },
     "InvalidRequestError": {
-      "additionalProperties": false,
       "description": "JSON-RPC error indicating the JSON sent is not a valid Request object.",
       "properties": {
         "code": {
           "const": -32600,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "number"
+          "type": "integer"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -781,13 +755,12 @@
       "type": "object"
     },
     "JSONParseError": {
-      "additionalProperties": false,
       "description": "JSON-RPC error indicating invalid JSON was received by the server.",
       "properties": {
         "code": {
           "const": -32700,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "number"
+          "type": "integer"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -802,12 +775,11 @@
       "type": "object"
     },
     "JSONRPCError": {
-      "additionalProperties": false,
       "description": "Represents a JSON-RPC 2.0 Error object.\nThis is typically included in a JSONRPCErrorResponse when an error occurs.",
       "properties": {
         "code": {
           "description": "A Number that indicates the error type that occurred.",
-          "type": "number"
+          "type": "integer"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -821,7 +793,6 @@
       "type": "object"
     },
     "JSONRPCErrorResponse": {
-      "additionalProperties": false,
       "description": "Represents a JSON-RPC 2.0 Error Response object.",
       "properties": {
         "error": {
@@ -866,7 +837,7 @@
         },
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "number", "null"]
+          "type": ["string", "integer", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -878,12 +849,11 @@
       "type": "object"
     },
     "JSONRPCMessage": {
-      "additionalProperties": false,
       "description": "Base interface for any JSON-RPC 2.0 request or response.",
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "number", "null"]
+          "type": ["string", "integer", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -895,12 +865,11 @@
       "type": "object"
     },
     "JSONRPCRequest": {
-      "additionalProperties": false,
       "description": "Represents a JSON-RPC 2.0 Request object.",
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "number", "null"]
+          "type": ["string", "integer", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -945,12 +914,11 @@
       "description": "Represents a JSON-RPC 2.0 Response object."
     },
     "JSONRPCSuccessResponse": {
-      "additionalProperties": false,
       "description": "Represents a JSON-RPC 2.0 Success Response object.",
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "number", "null"]
+          "type": ["string", "integer", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -965,7 +933,6 @@
       "type": "object"
     },
     "Message": {
-      "additionalProperties": false,
       "description": "Represents a single message exchanged between user and agent.",
       "properties": {
         "contextId": {
@@ -1014,7 +981,6 @@
       "type": "object"
     },
     "MessageSendConfiguration": {
-      "additionalProperties": false,
       "description": "Configuration for the send message request.",
       "properties": {
         "acceptedOutputModes": {
@@ -1030,7 +996,7 @@
         },
         "historyLength": {
           "description": "Number of recent messages to be retrieved.",
-          "type": "number"
+          "type": "integer"
         },
         "pushNotificationConfig": {
           "$ref": "#/definitions/PushNotificationConfig",
@@ -1041,7 +1007,6 @@
       "type": "object"
     },
     "MessageSendParams": {
-      "additionalProperties": false,
       "description": "Sent by the client to the agent as a request. May create, continue or restart a task.",
       "properties": {
         "configuration": {
@@ -1062,13 +1027,12 @@
       "type": "object"
     },
     "MethodNotFoundError": {
-      "additionalProperties": false,
       "description": "JSON-RPC error indicating the method does not exist or is not available.",
       "properties": {
         "code": {
           "const": -32601,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "number"
+          "type": "integer"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -1083,7 +1047,6 @@
       "type": "object"
     },
     "OAuth2SecurityScheme": {
-      "additionalProperties": false,
       "description": "OAuth2.0 security scheme configuration.",
       "properties": {
         "description": {
@@ -1103,7 +1066,6 @@
       "type": "object"
     },
     "OAuthFlows": {
-      "additionalProperties": false,
       "description": "Allows configuration of the supported OAuth Flows",
       "properties": {
         "authorizationCode": {
@@ -1126,7 +1088,6 @@
       "type": "object"
     },
     "OpenIdConnectSecurityScheme": {
-      "additionalProperties": false,
       "description": "OpenID Connect security scheme configuration.",
       "properties": {
         "description": {
@@ -1160,7 +1121,6 @@
       "description": "Represents a part of a message, which can be text, a file, or structured data."
     },
     "PartBase": {
-      "additionalProperties": false,
       "description": "Base properties common to all message parts.",
       "properties": {
         "metadata": {
@@ -1172,7 +1132,6 @@
       "type": "object"
     },
     "PasswordOAuthFlow": {
-      "additionalProperties": false,
       "description": "Configuration details for a supported OAuth Flow",
       "properties": {
         "refreshUrl": {
@@ -1195,7 +1154,6 @@
       "type": "object"
     },
     "PushNotificationAuthenticationInfo": {
-      "additionalProperties": false,
       "description": "Defines authentication details for push notifications.",
       "properties": {
         "credentials": {
@@ -1214,7 +1172,6 @@
       "type": "object"
     },
     "PushNotificationConfig": {
-      "additionalProperties": false,
       "description": "Configuration for setting up push notifications for task updates.",
       "properties": {
         "authentication": {
@@ -1237,13 +1194,12 @@
       "type": "object"
     },
     "PushNotificationNotSupportedError": {
-      "additionalProperties": false,
       "description": "A2A specific error indicating the agent does not support push notifications.",
       "properties": {
         "code": {
           "const": -32003,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "number"
+          "type": "integer"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -1258,7 +1214,6 @@
       "type": "object"
     },
     "Record<string,unknown>": {
-      "additionalProperties": false,
       "type": "object"
     },
     "SecurityScheme": {
@@ -1279,7 +1234,6 @@
       "description": "Mirrors the OpenAPI Security Scheme Object\n(https://swagger.io/specification/#security-scheme-object)"
     },
     "SecuritySchemeBase": {
-      "additionalProperties": false,
       "description": "Base properties shared by all security schemes.",
       "properties": {
         "description": {
@@ -1290,12 +1244,11 @@
       "type": "object"
     },
     "SendMessageRequest": {
-      "additionalProperties": false,
       "description": "JSON-RPC request model for the 'message/send' method.",
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "number"]
+          "type": ["string", "integer"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -1327,12 +1280,11 @@
       "description": "JSON-RPC response model for the 'message/send' method."
     },
     "SendMessageSuccessResponse": {
-      "additionalProperties": false,
       "description": "JSON-RPC success response model for the 'message/send' method.",
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "number", "null"]
+          "type": ["string", "integer", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -1355,12 +1307,11 @@
       "type": "object"
     },
     "SendStreamingMessageRequest": {
-      "additionalProperties": false,
       "description": "JSON-RPC request model for the 'message/stream' method.",
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "number"]
+          "type": ["string", "integer"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -1392,12 +1343,11 @@
       "description": "JSON-RPC response model for the 'message/stream' method."
     },
     "SendStreamingMessageSuccessResponse": {
-      "additionalProperties": false,
       "description": "JSON-RPC success response model for the 'message/stream' method.",
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "number", "null"]
+          "type": ["string", "integer", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -1426,12 +1376,11 @@
       "type": "object"
     },
     "SetTaskPushNotificationConfigRequest": {
-      "additionalProperties": false,
       "description": "JSON-RPC request model for the 'tasks/pushNotificationConfig/set' method.",
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "number"]
+          "type": ["string", "integer"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -1463,12 +1412,11 @@
       "description": "JSON-RPC response for the 'tasks/pushNotificationConfig/set' method."
     },
     "SetTaskPushNotificationConfigSuccessResponse": {
-      "additionalProperties": false,
       "description": "JSON-RPC success response model for the 'tasks/pushNotificationConfig/set' method.",
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "number", "null"]
+          "type": ["string", "integer", "null"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -1484,7 +1432,6 @@
       "type": "object"
     },
     "Task": {
-      "additionalProperties": false,
       "properties": {
         "artifacts": {
           "description": "Collection of artifacts created by the agent.",
@@ -1526,7 +1473,6 @@
       "type": "object"
     },
     "TaskArtifactUpdateEvent": {
-      "additionalProperties": false,
       "description": "Sent by server during sendStream or subscribe requests",
       "properties": {
         "append": {
@@ -1564,7 +1510,6 @@
       "type": "object"
     },
     "TaskIdParams": {
-      "additionalProperties": false,
       "description": "Parameters containing only a task ID, used for simple task operations.",
       "properties": {
         "id": {
@@ -1580,13 +1525,12 @@
       "type": "object"
     },
     "TaskNotCancelableError": {
-      "additionalProperties": false,
       "description": "A2A specific error indicating the task is in a state where it cannot be canceled.",
       "properties": {
         "code": {
           "const": -32002,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "number"
+          "type": "integer"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -1601,13 +1545,12 @@
       "type": "object"
     },
     "TaskNotFoundError": {
-      "additionalProperties": false,
       "description": "A2A specific error indicating the requested task ID was not found.",
       "properties": {
         "code": {
           "const": -32001,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "number"
+          "type": "integer"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
@@ -1622,7 +1565,6 @@
       "type": "object"
     },
     "TaskPushNotificationConfig": {
-      "additionalProperties": false,
       "description": "Parameters for setting or getting push notification configuration for a task",
       "properties": {
         "pushNotificationConfig": {
@@ -1638,12 +1580,11 @@
       "type": "object"
     },
     "TaskQueryParams": {
-      "additionalProperties": false,
       "description": "Parameters for querying a task, including optional history length.",
       "properties": {
         "historyLength": {
           "description": "Number of recent messages to be retrieved.",
-          "type": "number"
+          "type": "integer"
         },
         "id": {
           "description": "Task id.",
@@ -1658,12 +1599,11 @@
       "type": "object"
     },
     "TaskResubscriptionRequest": {
-      "additionalProperties": false,
       "description": "JSON-RPC request model for the 'tasks/resubscribe' method.",
       "properties": {
         "id": {
           "description": "An identifier established by the Client that MUST contain a String, Number.\nNumbers SHOULD NOT contain fractional parts.",
-          "type": ["string", "number"]
+          "type": ["string", "integer"]
         },
         "jsonrpc": {
           "const": "2.0",
@@ -1699,7 +1639,6 @@
       "type": "string"
     },
     "TaskStatus": {
-      "additionalProperties": false,
       "description": "TaskState and accompanying message.",
       "properties": {
         "message": {
@@ -1723,7 +1662,6 @@
       "type": "object"
     },
     "TaskStatusUpdateEvent": {
-      "additionalProperties": false,
       "description": "Sent by server during sendStream or subscribe requests",
       "properties": {
         "contextId": {
@@ -1757,7 +1695,6 @@
       "type": "object"
     },
     "TextPart": {
-      "additionalProperties": false,
       "description": "Represents a text segment within parts.",
       "properties": {
         "kind": {
@@ -1779,13 +1716,12 @@
       "type": "object"
     },
     "UnsupportedOperationError": {
-      "additionalProperties": false,
       "description": "A2A specific error indicating the requested operation is not supported by the agent.",
       "properties": {
         "code": {
           "const": -32004,
           "description": "A Number that indicates the error type that occurred.",
-          "type": "number"
+          "type": "integer"
         },
         "data": {
           "description": "A Primitive or Structured value that contains additional information about the error.\nThis may be omitted."
