@@ -57,3 +57,12 @@ jobs:
           FILTER_REGEX_EXCLUDE: "^(\\.github/|\\.vscode/).*|CODE_OF_CONDUCT.md|CHANGELOG.md"
           VALIDATE_JAVASCRIPT_STANDARD: true
           VALIDATE_JSON_PRETTIER: true
+
+      - name: Check schema sync and print diff if out of date
+        run: |
+          git diff --exit-code specification/json/a2a.json || {
+            echo "::error file=specification/json/a2a.json::Schema is out of sync! See diff below:";
+            git --no-pager diff specification/json/a2a.json;
+            exit 1;
+          }
+        shell: bash
