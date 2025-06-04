@@ -260,7 +260,7 @@ export enum TaskState {
   Rejected = 'rejected',
   AuthRequired = 'auth-required',
   Unknown = 'unknown',
-}
+} /* eslint-enable @typescript-eslint/no-unused-vars */
 // --8<-- [end:TaskState]
 
 // --8<-- [start:Artifact]
