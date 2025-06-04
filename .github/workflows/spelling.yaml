@@ -45,43 +45,43 @@ jobs:
           warnings: bad-regex,binary-file,deprecated-feature,ignored-expect-variant,large-file,limited-references,no-newline-at-eof,noisy-file,non-alpha-in-dictionary,token-is-substring,unexpected-line-ending,whitespace-in-dictionary,minified-file,unsupported-configuration,no-files-to-check,unclosed-block-ignore-begin,unclosed-block-ignore-end
           experimental_apply_changes_via_bot: 1
           dictionary_source_prefixes: '{"cspell": "https://raw.githubusercontent.com/streetsidesoftware/cspell-dicts/main/dictionaries/"}'
-          extra_dictionaries: |
-  cspell:custom/custom-words.txt
-            cspell:aws/dict/aws.txt
-            cspell:bash/samples/bash-words.txt
-            cspell:companies/dict/companies.txt
-            cspell:css/dict/css.txt
-            cspell:data-science/dict/data-science-models.txt
-            cspell:data-science/dict/data-science.txt
-            cspell:data-science/dict/data-science-tools.txt
-            cspell:en_shared/dict/acronyms.txt
-            cspell:en_shared/dict/shared-additional-words.txt
-            cspell:en_GB/en_GB.trie
-            cspell:en_US/en_US.trie
-            cspell:filetypes/src/filetypes.txt
-            cspell:fonts/dict/fonts.txt
-            cspell:fullstack/dict/fullstack.txt
-            cspell:golang/dict/go.txt
-            cspell:google/dict/google.txt
-            cspell:html/dict/html.txt
-            cspell:java/src/java.txt
-            cspell:k8s/dict/k8s.txt
-            cspell:mnemonics/dict/mnemonics.txt
-            cspell:monkeyc/src/monkeyc_keywords.txt
-            cspell:node/dict/node.txt
-            cspell:npm/dict/npm.txt
-            cspell:people-names/dict/people-names.txt
-            cspell:python/dict/python.txt
-            cspell:python/dict/python-common.txt
-            cspell:shell/dict/shell-all-words.txt
-            cspell:software-terms/dict/softwareTerms.txt
-            cspell:software-terms/dict/webServices.txt
-            cspell:sql/src/common-terms.txt
-            cspell:sql/src/sql.txt
-            cspell:sql/src/tsql.txt
-            cspell:terraform/dict/terraform.txt
-            cspell:typescript/dict/typescript.txt
-          check_extra_dictionaries: ''
-  cspell:custom/custom-words.txt
-          only_check_changed_files: true
-          longest_word: '10'
+           extra_dictionaries: |
+    cspell:custom/custom-words.txt
+             cspell:aws/dict/aws.txt
+             cspell:bash/samples/bash-words.txt
+             cspell:companies/dict/companies.txt
+             cspell:css/dict/css.txt
+             cspell:data-science/dict/data-science-models.txt
+             cspell:data-science/dict/data-science.txt
+             cspell:data-science/dict/data-science-tools.txt
+             cspell:en_shared/dict/acronyms.txt
+             cspell:en_shared/dict/shared-additional-words.txt
+             cspell:en_GB/en_GB.trie
+             cspell:en_US/en_US.trie
+             cspell:filetypes/src/filetypes.txt
+             cspell:fonts/dict/fonts.txt
+             cspell:fullstack/dict/fullstack.txt
+             cspell:golang/dict/go.txt
+             cspell:google/dict/google.txt
+             cspell:html/dict/html.txt
+             cspell:java/src/java.txt
+             cspell:k8s/dict/k8s.txt
+             cspell:mnemonics/dict/mnemonics.txt
+             cspell:monkeyc/src/monkeyc_keywords.txt
+             cspell:node/dict/node.txt
+             cspell:npm/dict/npm.txt
+             cspell:people-names/dict/people-names.txt
+             cspell:python/dict/python.txt
+             cspell:python/dict/python-common.txt
+             cspell:shell/dict/shell-all-words.txt
+             cspell:software-terms/dict/softwareTerms.txt
+             cspell:software-terms/dict/webServices.txt
+             cspell:sql/src/common-terms.txt
+             cspell:sql/src/sql.txt
+             cspell:sql/src/tsql.txt
+             cspell:terraform/dict/terraform.txt
+             cspell:typescript/dict/typescript.txt
+           check_extra_dictionaries: ''
+    cspell:custom/custom-words.txt
+           only_check_changed_files: true
+           longest_word: '10'
